@@ -17,7 +17,7 @@
         .split('\n')
         .map(str => str.match(/(\d{3,})/ig))
         .filter(Boolean)
-        .map(val => val[0])
+        .map(val => val[val.length - 1])
         .reduce((sum, next) => sum + +next, 0);
       document.querySelector('#result').textContent = new Intl.NumberFormat(
         'ru-RU', { style: 'currency', currency: 'RUB' }
